@@ -1,8 +1,13 @@
 const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
+  name: 'movie-ticket-host',
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+  },
+  remotes: {
+    movieapp: "https://movieapp-mfe.netlify.app/remoteEntry.js",
+    ticketapp: "https://ticketapp-mfe.netlify.app/remoteEntry.js"
   },
 
   skip: [

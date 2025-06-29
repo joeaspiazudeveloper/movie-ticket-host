@@ -1,6 +1,6 @@
 [build]
-  command = "npm install && npm run build" # Comando para instalar dependencias y construir
-  publish = "dist/movie-ticket-host" # Carpeta donde Angular pone los archivos de build
+  command = "npm install && npm run build"
+  publish = "dist/movie-ticket-host/browser"
 
 [[redirects]]
   from = "/*"
