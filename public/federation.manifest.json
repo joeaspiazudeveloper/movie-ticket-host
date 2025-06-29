@@ -1,4 +1,4 @@
 {
-	"movieapp": "http://localhost:4201/remoteEntry.json",
-	"ticketapp": "http://localhost:4202/remoteEntry.json"
+	"movieapp": "https://movieapp-mfe.netlify.app/remoteEntry.js",
+	"ticketapp": "https://ticketapp-mfe.netlify.app/remoteEntry.js"
 }
