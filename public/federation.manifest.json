@@ -1,0 +1,4 @@
+{
+	"movieapp": "http://localhost:4201/remoteEntry.json",
+	"ticketapp": "http://localhost:4202/remoteEntry.json"
+}

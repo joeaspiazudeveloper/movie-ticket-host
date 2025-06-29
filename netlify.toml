@@ -1,0 +1,8 @@
+[build]
+  command = "npm install && npm run build" # Comando para instalar dependencias y construir
+  publish = "dist/movie-ticket-host" # Carpeta donde Angular pone los archivos de build
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 # Redirige todas las rutas a index.html para SPA (Single Page Application)
