@@ -8,12 +8,12 @@ export class MicrofrontendService {
 
   constructor() { }
 
-  async loadRemoteComponent(port: number, remoteName: string) {
+  async loadRemoteComponent(remoteName: string) {
     try {
       return await loadRemoteModule({
         exposedModule: './Component',
         remoteName: remoteName,
-        remoteEntry: `http://localhost:${port}/remoteEntry.js`,
+        // remoteEntry: `http://localhost:${port}/remoteEntry.js`,
         fallback: 'Unathorized'
 
       })
