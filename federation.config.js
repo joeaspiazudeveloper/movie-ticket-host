@@ -3,7 +3,8 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 module.exports = withNativeFederation({
   name: 'movie-ticket-host',
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    // ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' })
   },
   remotes: {
     movieapp: "https://movieapp-mfe.netlify.app/remoteEntry.js",
@@ -25,7 +26,7 @@ module.exports = withNativeFederation({
     // New feature for more performance and avoiding
     // issues with node libs. Comment this out to
     // get the traditional behavior:
-    ignoreUnusedDeps: true
+    // ignoreUnusedDeps: true
   }
   
 });
