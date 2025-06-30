@@ -21,9 +21,9 @@ export class AppComponent {
   async ngOnInit() {
     try {
       // 1. Load movieapp
-      const movieappModule = await this.microfrontendService.loadRemoteComponent('movieapp');
+      const movieappComponent = await this.microfrontendService.loadRemoteComponent('movieapp');
       this.listContainer.clear();
-      this.movieAppComponentRef = this.listContainer.createComponent(movieappModule.AppComponent);
+      this.movieAppComponentRef = this.listContainer.createComponent(movieappComponent);
 
       // 2. Subscribe to the 'movieSelected' Output from movieapp's AppComponent
       if (this.movieAppComponentRef.instance.movieSelected) {
@@ -39,9 +39,9 @@ export class AppComponent {
       this.movieAppComponentRef.changeDetectorRef.detectChanges();
 
       // 4. Load ticketapp
-      const ticketappModule = await this.microfrontendService.loadRemoteComponent('ticketapp');
+      const ticketappComponent = await this.microfrontendService.loadRemoteComponent('ticketapp');
       this.ticketContainer.clear();
-      this.ticketAppComponentRef = this.ticketContainer.createComponent(ticketappModule.AppComponent);
+      this.ticketAppComponentRef = this.ticketContainer.createComponent(ticketappComponent);
       this.ticketAppComponentRef.changeDetectorRef.detectChanges();
 
     } catch (error) {
