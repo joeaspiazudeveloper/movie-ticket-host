@@ -8,18 +8,17 @@ export class MicrofrontendService {
 
   constructor() { }
 
-  async loadRemoteComponent(remoteName: string) {
+  async loadRemoteComponent(remoteName: string, port: number) {
     try {
       return await loadRemoteModule({
         exposedModule: './Component',
         remoteName: remoteName,
-        // remoteEntry: `http://localhost:${port}/remoteEntry.js`,
-        fallback: 'Unathorized'
-
+        remoteEntry: `http://localhost:${port}/remoteEntry.json`,
+        fallback: 'unauthorized'
       })
-    } catch (error) {
-      console.error(`Error loading ${remoteName} component:`, error);
-      throw error;
-    }  
+    } catch (err) {
+      console.error(`Error loading ${remoteName} component: `, err);
+      throw err;
+    }
   }
 }
